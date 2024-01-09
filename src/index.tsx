@@ -5,19 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import OtherApp from "./OtherApp";
 
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
 if (process.env.REACT_APP_TEST_ENV === "other") {
-  const other = ReactDOM.createRoot(
-    document.getElementById("other") as HTMLElement
-  );
-  other.render(
+  root.render(
     <React.StrictMode>
       <OtherApp />
     </React.StrictMode>
   );
 } else {
-  const root = ReactDOM.createRoot(
-    document.getElementById("root") as HTMLElement
-  );
   root.render(
     <React.StrictMode>
       <App />
